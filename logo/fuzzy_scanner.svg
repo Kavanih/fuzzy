@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160" width="520" height="160">
+  <defs>
+    <clipPath id="circleClip">
+      <circle cx="80" cy="80" r="72"/>
+    </clipPath>
+    <filter id="scanGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="scanLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#cc0000" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#ff1a1a" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#ff4444" stop-opacity="1"/>
+      <stop offset="70%" stop-color="#ff1a1a" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#cc0000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer ring -->
+  <circle cx="80" cy="80" r="75" fill="none" stroke="#cc0000" stroke-width="3.5"/>
+
+  <!-- Black circle background -->
+  <circle cx="80" cy="80" r="72" fill="#0a0a0a"/>
+
+  <!-- Hexagon grid (7 hexagons: center + 6 around) clipped to circle -->
+  <g clip-path="url(#circleClip)" fill="#cc0000" stroke="#0a0a0a" stroke-width="1.5">
+    <!-- Center hex -->
+    <polygon points="80,50 100.8,62 100.8,86 80,98 59.2,86 59.2,62"/>
+    <!-- Top -->
+    <polygon points="80,8 100.8,20 100.8,44 80,56 59.2,44 59.2,20"/>
+    <!-- Top-right -->
+    <polygon points="121.6,29 142.4,41 142.4,65 121.6,77 100.8,65 100.8,41"/>
+    <!-- Bottom-right -->
+    <polygon points="121.6,83 142.4,95 142.4,119 121.6,131 100.8,119 100.8,95"/>
+    <!-- Bottom -->
+    <polygon points="80,104 100.8,116 100.8,140 80,152 59.2,140 59.2,116"/>
+    <!-- Bottom-left -->
+    <polygon points="38.4,83 59.2,95 59.2,119 38.4,131 17.6,119 17.6,95"/>
+    <!-- Top-left -->
+    <polygon points="38.4,29 59.2,41 59.2,65 38.4,77 17.6,65 17.6,41"/>
+  </g>
+
+  <!-- Horizontal scan line beam -->
+  <rect x="8" y="76" width="144" height="8" fill="url(#scanLine)" filter="url(#scanGlow)" clip-path="url(#circleClip)" rx="1"/>
+  <!-- Scan line highlight -->
+  <rect x="8" y="78" width="144" height="2" fill="#ff6666" opacity="0.7" clip-path="url(#circleClip)"/>
+
+  <!-- Crosshair tick marks on circle edge -->
+  <line x1="80" y1="5" x2="80" y2="15" stroke="#cc0000" stroke-width="2.5"/>
+  <line x1="80" y1="145" x2="80" y2="155" stroke="#cc0000" stroke-width="2.5"/>
+  <line x1="5" y1="80" x2="15" y2="80" stroke="#cc0000" stroke-width="2.5"/>
+  <line x1="145" y1="80" x2="155" y2="80" stroke="#cc0000" stroke-width="2.5"/>
+
+  <!-- Main title: FUZZY SCANNER -->
+  <text
+    x="185"
+    y="72"
+    font-family="'Arial Black', 'Impact', sans-serif"
+    font-weight="900"
+    font-size="46"
+    letter-spacing="2"
+    fill="#cc0000"
+  >FUZZY</text>
+
+  <text
+    x="185"
+    y="122"
+    font-family="'Arial Black', 'Impact', sans-serif"
+    font-weight="900"
+    font-size="46"
+    letter-spacing="2"
+    fill="#cc0000"
+  >SCANNER</text>
+
+  <!-- Subtitle -->
+  <text
+    x="186"
+    y="145"
+    font-family="'Arial', sans-serif"
+    font-weight="400"
+    font-size="13"
+    letter-spacing="4"
+    fill="#880000"
+  >SOLANA AUDIT INTELLIGENCE</text>
+</svg>
